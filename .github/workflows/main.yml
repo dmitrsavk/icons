@@ -14,20 +14,10 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    
-    - name: repo-sync
-      uses: repo-sync/github-sync@v2
-      with:
-        source_repo: "https://github.com/dmitrsavk/icons.git"
-        source_branch: "master"
-        destination_branch: "master"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
 
     - run: yarn install
     - run: yarn add --dev alfa-ui-primitives@latest
     - run: yarn generate
-    
-    - run: git status
 
     - name: commit changes
       uses: github-actions-x/commit@v2.5
@@ -39,10 +29,10 @@ jobs:
         files: .
         name: dmitrsavk
         email: dmitrsavk@yandex.ru
+
     - run: git fetch
     - run: git fetch --tags
-    - run: git status
-    - run: git tag
+
     - name: lerna diff
       uses: "MrBoolean/action-lerna@master"
       with:
