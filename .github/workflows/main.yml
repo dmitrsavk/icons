@@ -32,6 +32,14 @@ jobs:
         name: dmitrsavk
         email: dmitrsavk@yandex.ru
     
+    - name: repo-sync
+      uses: repo-sync/github-sync@v2
+      with:
+        source_repo: "git@github.com:alfa-laboratory/icons.git"
+        source_branch: "master"
+        destination_branch: "master"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    
     - run: git fetch --tags
     - run: git status
     - run: git tag
