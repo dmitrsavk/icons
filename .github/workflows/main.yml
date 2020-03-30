@@ -1,6 +1,9 @@
 name: TEST_ACTION
 
-on: repository_dispatch
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -26,6 +29,8 @@ jobs:
         files: .
         name: dmitrsavk
         email: dmitrsavk@yandex.ru
+    
+    - run: git fetch --tags
 
     - name: lerna up version
       uses: "MrBoolean/action-lerna@master"
