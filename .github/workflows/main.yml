@@ -34,6 +34,7 @@ jobs:
     
     - run: git fetch --tags
     - run: git status
+    - run: git tag
     - name: lerna diff
       uses: "MrBoolean/action-lerna@master"
       with:
