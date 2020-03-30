@@ -32,6 +32,11 @@ jobs:
         email: dmitrsavk@yandex.ru
     
     - run: git fetch --tags
+    
+    - name: lerna changed
+      uses: "MrBoolean/action-lerna@master"
+      with:
+       args: changed
 
     - name: lerna up version
       uses: "MrBoolean/action-lerna@master"
