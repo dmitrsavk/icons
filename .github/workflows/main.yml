@@ -29,8 +29,8 @@ jobs:
         files: .
         name: dmitrsavk
         email: dmitrsavk@yandex.ru
-
-    - run: git fetch
+    
+    - run: git fetch --prune --unshallow
     - run: git fetch --tags
 
     - name: lerna diff
