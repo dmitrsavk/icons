@@ -18,7 +18,8 @@ jobs:
     - run: yarn install
     - run: yarn add --dev alfa-ui-primitives@latest
     - run: yarn generate
-
+    
+    - run: git status
 
     - name: commit changes
       uses: github-actions-x/commit@v2.5
@@ -32,6 +33,11 @@ jobs:
         email: dmitrsavk@yandex.ru
     
     - run: git fetch --tags
+    - run: git status
+    - name: lerna diff
+      uses: "MrBoolean/action-lerna@master"
+      with:
+       args: diff
     
     - name: lerna changed
       uses: "MrBoolean/action-lerna@master"
