@@ -39,7 +39,7 @@ jobs:
         files: .
         name: dmitrsavk
         email: dmitrsavk@yandex.ru
-    
+    - run: git fetch
     - run: git fetch --tags
     - run: git status
     - run: git tag
