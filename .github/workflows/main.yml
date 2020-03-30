@@ -19,6 +19,7 @@ jobs:
     - run: yarn add --dev alfa-ui-primitives@latest
     - run: yarn generate
 
+
     - name: commit changes
       uses: github-actions-x/commit@v2.5
       with:
